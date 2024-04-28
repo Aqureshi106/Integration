@@ -34,17 +34,17 @@ int main() {
     int b = 0;
     cout << "Enter which type of function you would like to use to calculate the integral: line, square or cube: ";
     cin >> choice;
-    string array;
+    string check;
     do {
         for (int i = 0; i < choice.length(); i++) {
-            array += tolower(choice[i]);
+            check += tolower(choice[i]);
         }
-        if (array != "line" && array != "square" && array != "cube") {
-            array = "";
+        if (check != "line" && check != "square" && check != "cube") {
+            check = "";
             cout << "Invalid input: Not of the choices! Try again: ";
             cin >> choice;
         }
-    } while (array != "line" && array != "square" && array != "cube");
+    } while (check != "line" && check != "square" && check != "cube");
     cout << "Enter the value of the lower limit: ";
     cin >> a;
     cout << "Enter the value of the upper limit: ";
@@ -53,11 +53,11 @@ int main() {
         cout << "Invalid input: The upper limit is less than or equal to the lower limit! Try again: ";
         cin >> b;
     }
-    if (array == "line") {
+    if (check == "line") {
         cout << "The integral of f(x) = x between " << a << " and " << b << " is: " << integrate(line, a, b) << "!" << endl;
-    } else if (array == "square") {
+    } else if (check == "square") {
         cout << "The integral of f(x) = x^2 between " << a << " and " << b << " is: " << integrate(square, a, b) << "!" << endl;
-    } else if (array == "cube") {
+    } else if (check == "cube") {
         cout << "The integral of f(x) = x^3 between " << a << " and " << b << " is: " << integrate(cube, a, b) << "!" << endl;
     }
     return 0;
