@@ -49,7 +49,7 @@ int main() {
     cin >> a;
     cout << "Enter the value of the upper limit: ";
     cin >> b;
-    while (b < a) {
+    while (b <= a) {
         cout << "Invalid input: The upper limit is less than or equal to the lower limit! Try again: ";
         cin >> b;
     }
